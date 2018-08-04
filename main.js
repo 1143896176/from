@@ -414,7 +414,7 @@ layui.use(['form', 'laydate', 'upload', 'jquery'], function () {
     /*星钻*/
     $('.lable-warp>div>div:nth-child(6) ').click(function () {
         if ($(this).hasClass('layui-form-checked')) {
-            $(this).after(" <input type=\"number\" name=\"title\" required lay-verify=\"isFive\" placeholder=\"请输入星钻等级1-5\"autocomplete=\"off\" class=\"layui-input lable\" style=\"display:inline-block;height:32px;width: 180px\" maxlength=\"1\">")
+            $(this).after(" <input type=\"number\" name=\"title\" required lay-verify=\"isFive\" placeholder=\"请输入星钻等级1-5\"autocomplete=\"off\" class=\"layui-input lable\" style=\"display:inline-block;height:32px;width: 180px; vertical-align:middle;\" maxlength=\"1\">")
         } else {
             $(this).siblings('.lable').remove()
             $(this).siblings('.aa').remove()
