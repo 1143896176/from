@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/layui.css">
+    <script src="layui.js"></script>
+    <title>信息采集表4</title>
+    <style>
+        * {
+            /* moz-user-select: -moz-none;
+             -moz-user-select: none;
+             -o-user-select: none;
+             -khtml-user-select: none;
+             -webkit-user-select: none;
+             -ms-user-select: none;
+             user-select: none;*/
+        }
+
+        .layui-form-label {
+            position: relative;
+            float: left;
+            display: block;
+            padding: 9px 5px;
+            width: 98px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: right;
+        }
+
+        .layui-input, .layui-textarea {
+            display: inline-block;
+            width: 90%;
+            padding-left: 10px;
+        }
+
+        .layui-form-select .layui-edge {
+            position: absolute;
+            right: 10%;
+        }
+
+        .layui-form-select dl {
+            min-width: 90%;
+        }
+
+        .readonly {
+            border: 0px;
+        }
+
+        input {
+            word-break: break-all
+        }
+
+        h3 {
+            margin: 10px;
+            text-align: center;
+        }
+
+        .nonbsp .layui-form-item {
+            margin-bottom: 0px;
+            clear: both;
+        }
+    </style>
+
+</head>
+<body>
+<div style="width:100%;max-width: 768px;margin: 0 auto">
+    <h3><strong>信息采集表4</strong></h3>
+    <div class="layui-form-mid layui-word-aux" style="font-size: 12px;margin-left: 30px">注：*为必填项</div>
+    <from class="layui-form" action="" enctype="multipart/form-data">
+        <!--桌数-->
+        <div class="layui-form-item desk-number">
+            <label class="layui-form-label ">*桌数</label>
+            <div class="layui-input-block">
+
+                <input type="checkbox" name="desk" title="大厅" lay-filter="filter" lay-skin="primary" value="大厅">
+                <input type="checkbox" name="desk" title="包间" value="包间" lay-filter="filter" lay-skin="primary">
+            </div>
+        </div>
+        <!--财务负责人姓名-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">财务负责人姓名</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" lay-verify="isCaiwu" placeholder="请输入20个以内汉字"
+                       autocomplete="off" class="layui-input finance-name" maxlength="20">
+            </div>
+        </div>
+        <!--财务联系方式-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">财务联系方式</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" lay-verify="isCaiwuTel" placeholder="请输入11位手机号"
+                       autocomplete="off" class="layui-input finance-tel">
+            </div>
+        </div>
+        <!--门头照片-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">门头照片：</label>
+            <div class="layui-input-block">
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn" id="test1">上传图片</button>
+                    <div class="layui-upload-list" style="float: right;padding-right: 10px;">
+                        <img class="layui-upload-img" id="demo1" width="100%">
+                        <p class="demoText"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--营业执照-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">营业执照：</label>
+            <div class="layui-input-block">
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn" id="test2">上传图片</button>
+                    <div class="layui-upload-list" style="float: right;padding-right: 10px;">
+                        <img class="layui-upload-img" id="demo2" width="100%">
+                        <p class="demoText2"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--卫生许可证-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">卫生许可证：</label>
+            <div class="layui-input-block">
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn" id="test3">上传图片</button>
+                    <div class="layui-upload-list" style="float: right;padding-right: 10px;">
+                        <img class="layui-upload-img" id="demo3" width="100%">
+                        <p class="demoText3"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--合同快照-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">合同快照：</label>
+            <div class="layui-input-block">
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn" id="test4">上传图片</button>
+                    <div class="layui-upload-list" style="float: right;padding-right: 10px;">
+                        <img class="layui-upload-img" id="demo4" width="100%">
+                        <p class="demoText4"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--备注-->
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">备注</label>
+            <div class="layui-input-block">
+                <textarea name="desc" placeholder="请输入300汉字以内" class="layui-textarea" maxlength="300"></textarea>
+            </div>
+        </div>
+        <!--提交状态-->
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">提交状态</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" placeholder="未提交"
+                       autocomplete="off" class="layui-input finance-tel">
+            </div>
+        </div>
+
+        <!---->
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo" id="submit">保存</button>
+                <button class="layui-btn" lay-submit lay-filter="formDemo" id="submit2">立即提交</button>
+            </div>
+        </div>
+    </from>
+</div>
+<script src="js/checked_HasValue.js"></script>
+<script src="main.js"></script>
+<script>
+    layui.use(['form', 'laydate', 'upload', 'jquery'], function () {
+        var laydate = layui.laydate;
+        var $ = layui.jquery
+            , upload = layui.upload;
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+
+            var hasEat = layui.checked_HasValue($, 'desk', '复选框为必选项');
+            if (hasEat == false) {
+                return false;
+            }
+
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+
+    })
+
+</script>
+</body>
+</html>
+<!--財務無聯係方式及姓名等驗證轉換為非必填項需匹配空字符和去掉requier零添加驗證方式 -->

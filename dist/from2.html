@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="css/layui.css">
+    <script src="layui.js"></script>
+    <title>信息采集2</title>
+    <style>
+        * {
+            /* moz-user-select: -moz-none;
+             -moz-user-select: none;
+             -o-user-select: none;
+             -khtml-user-select: none;
+             -webkit-user-select: none;
+             -ms-user-select: none;
+             user-select: none;*/
+        }
+
+        .layui-form-label {
+            position: relative;
+            float: left;
+            display: block;
+            padding: 9px 5px;
+            width: 98px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: right;
+        }
+
+        .layui-input, .layui-textarea {
+            display: inline-block;
+            width: 90%;
+            padding-left: 10px;
+        }
+
+        .layui-form-select .layui-edge {
+            position: absolute;
+            right: 10%;
+        }
+
+        .layui-form-select dl {
+            min-width: 90%;
+        }
+
+        .readonly {
+            border: 0px;
+        }
+
+        input {
+            word-break: break-all
+        }
+
+        h3 {
+            margin: 10px;
+            text-align: center;
+        }
+        .nonbsp  .layui-form-item {
+            margin-bottom: 0px;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+<div style="width:100%;max-width: 768px;margin: 0 auto">
+    <h3><strong>信息采集表2</strong></h3>
+    <div class="layui-form-mid layui-word-aux" style="font-size: 12px;margin-left: 30px">注：*为必填项</div>
+    <form class="layui-form" action="" enctype="multipart/form-data">
+        <!--登录账号-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">*登录账号</label>
+            <div class="layui-input-block">
+                <input type="text" name="login"  lay-verify="required|loginaccount" placeholder="请输入11位手机号"
+                       autocomplete="off" class="layui-input login-account">
+            </div>
+        </div>
+        <!--登录密码-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">*登录密码</label>
+            <div class="layui-input-inline">
+                <input type="password" name="password"  lay-verify="required|isPass" placeholder="请输入密码"
+                       autocomplete="off" class="layui-input login-password">
+            </div>
+            <div class="layui-form-mid layui-word-aux" style="font-size: 12px;">请输入6-20位英文数字混合的密码</div>
+        </div>
+        <!--餐厅座机-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">*餐厅座机</label>
+            <div class="layui-input-block">
+                <input type="text" name="座机"  lay-verify="required|seatmachine" placeholder="请输入11/12位手机号"
+                       autocomplete="off" class="layui-input seat-machine">
+            </div>
+        </div>
+        <!--餐厅座机2-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">餐厅座机2</label>
+            <div class="layui-input-block">
+                <input type="text" name="座机2" lay-verify="isNull" placeholder="请输入11/12位手机号"
+                       autocomplete="off" class="layui-input seat-machine2">
+            </div>
+        </div>
+        <!--餐厅负责人-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">*餐厅负责人</label>
+            <div class="layui-input-block">
+                <input type="text" name="负责人" lay-verify="required|head" placeholder="请输入10个以内汉字"
+                       autocomplete="off" class="layui-input head" maxlength="10">
+            </div>
+        </div>
+        <!--负责人电话-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">*负责人电话</label>
+            <div class="layui-input-block">
+                <input type="text" name="负责人tel"  lay-verify="required|headtel" placeholder="请输入11/12位手机号"
+                       autocomplete="off" class="layui-input       head-tel">
+            </div>
+        </div>
+        <!--性别性别-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">性别</label>
+            <div class="layui-input-block">
+                <input type="radio" name="sex" value="男" title="男">
+                <input type="radio" name="sex" value="女" title="女" checked>
+            </div>
+        </div>
+        <!--籍贯-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">籍贯</label>
+            <div class="layui-input-block">
+                <input type="text" name="籍贯"  placeholder=""
+                       autocomplete="off" class="layui-input       head-tel">
+                <!--<select name="city">
+                    <option value=""></option>
+                    <option value="0">北京</option>
+                    <option value="1">上海</option>
+                    <option value="2">广州</option>
+                    <option value="3">深圳</option>
+                    <option value="4">杭州</option>
+                </select>-->
+            </div>
+        </div>
+        <!--爱好-->
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">爱好</label>
+            <div class="layui-input-block">
+                <textarea name="desc" lay-verify="isLike" placeholder="请输入20个以内汉字" class="layui-textarea" maxlength="20"></textarea>
+            </div>
+        </div>
+        <!--法人姓名-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">*法人姓名</label>
+            <div class="layui-input-block">
+                <input type="text" name="法人姓名"  lay-verify="required|legalperson" placeholder="请输入20个以内汉字"
+                       autocomplete="off" class="layui-input legal-person" maxlength="20">
+            </div>
+        </div>
+        <!--法人联系方式-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">*联系方式</label>
+            <div class="layui-input-block">
+                <input type="text" name="联系方式"  lay-verify="required|legaltel" placeholder="请输入11位手机号"
+                       autocomplete="off" class="layui-input legal-tel">
+            </div>
+        </div>
+        <!--法人身份证-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">*法人身份证</label>
+            <div class="layui-input-block">
+                <input type="text" name="身份证" required lay-verify="required|legalider" placeholder="请输入15/18位身份证"
+                       autocomplete="off" class="layui-input legal-ider">
+            </div>
+        </div>
+        <!---->
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo" id="submit">下一步</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="js/checked_HasValue.js"></script>
+<script src="main.js"></script>
+<script>
+    layui.use(['form', 'laydate', 'upload', 'jquery'], function () {
+        var laydate = layui.laydate;
+        var $ = layui.jquery
+            , upload = layui.upload;
+        var form = layui.form;
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+
+            var hasEat = layui.checked_HasValue($, 'lable', '复选框为必选项');
+            if (hasEat == false) {
+                return false;
+            }
+            var haslike = layui.checked_HasValue($, 'class1', '复选框为必选项');
+            if (haslike == false) {
+                return false;
+            }
+            var haslike = layui.checked_HasValue($, 'class2', '复选框为必选项');
+            if (haslike == false) {
+                return false;
+            }
+
+            layer.msg(JSON.stringify(data.field));
+             return false;
+        });
+
+    })
+
+</script>
+</body>
+</html>
