@@ -31,6 +31,10 @@
             text-align: right;
         }
 
+        .layui-unselect {
+            vertical-align: middle;
+        }
+
         .layui-input, .layui-textarea {
             display: inline-block;
             width: 90%;
@@ -58,7 +62,8 @@
             margin: 10px;
             text-align: center;
         }
-        .nonbsp  .layui-form-item {
+
+        .nonbsp .layui-form-item {
             margin-bottom: 0px;
             clear: both;
         }
@@ -87,7 +92,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">*商户名称</label>
             <div class="layui-input-block">
-                <textarea type="text" name="title"  lay-verify="required|merchantname" placeholder="请输入30个字以内的汉字"
+                <textarea type="text" name="title" lay-verify="required|merchantname" placeholder="请输入30个字以内的汉字"
                           autocomplete="off" class="layui-input merchant-name"></textarea>
             </div>
         </div>
@@ -111,9 +116,9 @@
         <div class="layui-form-item  lable-warp">
             <label class="layui-form-label">*餐厅标签 </label>
             <div class="layui-input-block">
-                <input type="checkbox" name="lable" title="店面" value="店面" lay-skin="primary" >
-                <input type="checkbox" name="lable" title="品牌" value="品牌"lay-skin="primary" checked>
-                <input type="checkbox" name="lable" title="星钻" value="星钻"lay-skin="primary" style="vertical-align:middle;">
+                <input type="checkbox" name="lable" title="店面" value="店面" lay-skin="primary">
+                <input type="checkbox" name="lable" title="品牌" value="品牌" lay-skin="primary" checked>
+                <input type="checkbox" name="lable" title="星钻" value="星钻" lay-skin="primary">
             </div>
         </div>
         <!--店铺一级分类：-->
@@ -171,7 +176,8 @@
 
             <label class="layui-form-label">*商家地址</label>
             <div class="layui-input-block">
-                <textarea name="desc" lay-verify="required" placeholder="请输入300字以内" class="layui-textarea merchant-address"
+                <textarea name="desc" lay-verify="required" placeholder="请输入300字以内"
+                          class="layui-textarea merchant-address"
                           maxlength="300"></textarea>
             </div>
         </div>
@@ -179,7 +185,7 @@
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label ">*营业时间</label>
             <div class="layui-input-block"> <!-- 注意：这一层元素并不是必须的 -->
-                <input type="text" class="layui-input item" lay-verify="required" >
+                <input type="text" class="layui-input item" lay-verify="required">
             </div>
         </div>
         <!--闭店时间-->
@@ -192,7 +198,8 @@
         <!---->
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button class="layui-btn" lay-submit lay-filter="formDemo" id="submit"><a href="from2.html">下一步</a></button>
+                <button class="layui-btn" lay-submit lay-filter="formDemo" id="submit"><a href="from2.html">下一步</a>
+                </button>
             </div>
         </div>
     </form>
